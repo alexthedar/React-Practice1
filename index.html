@@ -155,6 +155,11 @@
       },
 
       render: function(){
+        if(this.state.page == 'home'){
+          var jumbotron = <Jumbotron />;
+      } else if (this.state.page = 'about'){
+        var jumbotron = '';
+      }
         return(
           <div>
             <Navbar
@@ -163,7 +168,7 @@
               homeClick={this.handleHomeClick}
               aboutClick={this.handleAboutClick}
             />
-            <Jumbotron />
+          {jumbotron}
             <PageHome />
             <Footer />
           </div>
